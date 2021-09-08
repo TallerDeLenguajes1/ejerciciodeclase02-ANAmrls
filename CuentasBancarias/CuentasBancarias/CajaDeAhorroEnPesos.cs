@@ -14,12 +14,14 @@ namespace CuentasBancarias
             {
                 if (tipo == TipoExtraccion.CajeroHumano)
                 {
+                    Fondo -= monto;
                     return monto;
                 }
                 else
                 {
                     if (monto <= 10000)
                     {
+                        Fondo -= monto;
                         return monto;
                     }
                     else

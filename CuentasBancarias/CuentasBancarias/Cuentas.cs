@@ -27,8 +27,8 @@ namespace CuentasBancarias
         {
             if (monto <= Fondo)
             {
+                Fondo -= monto;
                 return monto;
-
             }            
             else
             {
