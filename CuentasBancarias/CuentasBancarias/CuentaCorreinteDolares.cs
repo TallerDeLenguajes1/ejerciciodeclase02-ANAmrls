@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CuentasBancarias
-{    
-    class CuentaCorrientePesos : Cuentas
+{
+    class CuentaCorreinteDolares : Cuentas
     {
         public override decimal Extraccion(int monto, TipoExtraccion tipo)
         {
-            if (monto <= Fondo + 5000)
+            if (monto <= Fondo)
             {
                 if (tipo == TipoExtraccion.CajeroHumano)
                 {
@@ -18,13 +18,13 @@ namespace CuentasBancarias
                 }
                 else
                 {
-                    if (monto <= 20000)
+                    if (monto <= 200)
                     {
                         return monto;
                     }
                     else
                     {
-                        Console.WriteLine("El monto máximo de extraccion por cajero automatico es de $20.000");
+                        Console.WriteLine("El monto máximo de extraccion por cajero automatico es de $200");
                         return 0;
                     }
                 }
@@ -34,7 +34,7 @@ namespace CuentasBancarias
                 Console.WriteLine("Fondos insuficientes");
                 return 0;
             }
-            
+
         }
     }
 }
